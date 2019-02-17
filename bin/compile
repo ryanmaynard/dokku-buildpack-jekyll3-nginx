@@ -20,14 +20,14 @@ function indent() {
 }
 
 if [[ `ruby -v` == "ruby 1"* ]]; then
-  echo "-----> Installing Ruby 2.2.1"
+  echo "-----> Installing Ruby 2.6.1"
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/garnieretienne/rvm-download.git ~/.rbenv/plugins/rvm-download
   export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-  rbenv download 2.2.1
+  rbenv download 2.6.1
   rbenv rehash
-  rbenv local 2.2.1
-  rbenv global 2.2.1
+  rbenv local 2.6.1
+  rbenv global 2.6.1
 else
   echo "-----> Using `ruby -v`"
 fi
@@ -54,7 +54,7 @@ if [ ! -f $BUILD_DIR/.gems/bin/jekyll ]; then
     echo "-----> Installing Jekyll"
 
     # Newer versions depend on ruby_dep which needs newer ruby versions
-    gem install listen -v "< 3.1" --no-rdoc --no-ri | indent
+    gem install listen -v "< 3.5" --no-rdoc --no-ri | indent
 
     gem install liquid --no-rdoc --no-ri | indent
     gem install jekyll redcarpet sass --no-rdoc --no-ri | indent
