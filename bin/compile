@@ -20,14 +20,14 @@ function indent() {
 }
 
 if [[ `ruby -v` == "ruby 2"* ]]; then
-  echo "-----> Installing Ruby 2.6.1"
+  echo "-----> Installing Ruby 2.5.1"
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
   git clone https://github.com/garnieretienne/rvm-download.git ~/.rbenv/plugins/rvm-download
   export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-  rbenv download 2.6.1
+  rbenv download 2.5.1
   rbenv rehash
-  rbenv local 2.6.1
-  rbenv global 2.6.1
+  rbenv local 2.5.1
+  rbenv global 2.5.1
 else
   echo "-----> Using `ruby -v`"
 fi
